@@ -15,13 +15,13 @@ cooking.set({
   // production
   clean: true,
   hash: true,
-  sourceMap: true,
+  sourceMap: false,
   minimize: true,
   chunk: true, // see https://cookingjs.github.io/zh-cn/configuration.html#chunk
   postcss: [
     // require('...')
   ],
-  publicPath: '/dist/',
+  publicPath: './',
   assetsPath: 'static',
   urlLoaderLimit: 10000,
   static: true,
@@ -33,7 +33,26 @@ cooking.set({
     'components': path.resolve(__dirname, './src/components'),
     'styles': path.resolve(__dirname, './src/styles'),
   },
-  extends: ['vue2',, 'less', 'autoprefixer']
+  extends: ['vue2','less','autoprefixer']
 });
+
+
+cooking.add('loader.vue',{
+  test: /\.vue$/,
+  loaders: ['vue-loader']
+});
+
+cooking.add('loader.js',{
+  test: /\.js$/,
+  loaders: ['babel-loader'],
+  exclude: /node_modules/
+});
+
+cooking.add('loader.less',{
+  test: /\.less$/,
+  loaders: ['less-loader','style-loader','css-loader']
+});
+
+cooking.add('plugin.extractText',)
 
 module.exports = cooking.resolve();
