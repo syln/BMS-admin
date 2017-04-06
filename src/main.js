@@ -1,4 +1,4 @@
-import babelpolyfill from 'babel-polyfill'
+import babelPolyfill from "babel-polyfill"
 import Vue from 'vue'
 import App from './App'
 import ElementUI from 'element-ui'
