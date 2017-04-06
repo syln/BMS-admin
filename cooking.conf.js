@@ -53,6 +53,4 @@ cooking.add('loader.less',{
   loaders: ['less-loader','style-loader','css-loader']
 });
 
-cooking.add('plugin.extractText',)
-
 module.exports = cooking.resolve();
